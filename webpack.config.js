@@ -29,7 +29,8 @@ module.exports = {
       babel: {
         // @babel/preset-env options common for all bundles
         presetOptions: {
-          useBuiltIns: 'usage'
+          useBuiltIns: 'entry',
+          corejs: 3
         }
       },
 
