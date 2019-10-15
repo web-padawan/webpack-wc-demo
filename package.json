@@ -11,6 +11,7 @@
     "@webcomponents/shadycss": "^1.9.2",
     "@webcomponents/shadydom": "^1.6.1",
     "@webcomponents/template": "^1.4.1",
+    "ace-builds": "^1.4.6",
     "core-js": "3",
     "lit-element": "^2.2.1",
     "lit-html": "^1.1.2"

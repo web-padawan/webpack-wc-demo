@@ -29,21 +29,26 @@ module.exports = {
       babel: {
         // @babel/preset-env options common for all bundles
         presetOptions: {
-          useBuiltIns: 'entry',
-          corejs: 3
+          useBuiltIns: false
         }
       },
+
+      // Exclude dependency from transpiling
+      exclude: [
+        /node_modules\/ace-builds/
+      ],
+
+      // Exclude dependency from targeting
+      doNotTarget: [
+        /node_modules\/ace-builds/
+      ],
 
       // Target browsers with and without ES modules support
       targets: {
         es6: {
           browsers: [
-            'last 2 Chrome major versions',
-            'last 2 ChromeAndroid major versions',
-            'last 2 Edge major versions',
-            'last 2 Firefox major versions',
-            'last 3 Safari major versions',
-            'last 3 iOS major versions'
+            // Ensure tagged literals are not transpiled to ES5
+            'last 2 Chrome major versions'
           ],
           tagAssetsWithKey: false, // don’t append a suffix to the file name
           esModule: true // marks the bundle used with <script type="module">
