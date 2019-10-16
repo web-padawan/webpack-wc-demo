@@ -5027,10 +5027,10 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   dependencies:
     minimalistic-assert "^1.0.0"
 
-webpack-babel-multi-target-plugin-fix@2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/webpack-babel-multi-target-plugin-fix/-/webpack-babel-multi-target-plugin-fix-2.3.1.tgz#e17d20547dfa18831e5b8d1b0767e50f33072617"
-  integrity sha512-ilr3qM0AyMeaVXIEbKM2uzRhmToZfRIkFqXZIRt1SzaptBFj/JsIW/fdxCjlk9KYx5fwT+aXB/ihQH5rHd8GLQ==
+webpack-babel-multi-target-plugin@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/webpack-babel-multi-target-plugin/-/webpack-babel-multi-target-plugin-2.3.0.tgz#4d1cf1e73df6420c7085fe2bceb67bc81a0c08ef"
+  integrity sha512-mW6SW7U4H0/yY5dhHkrKkLxNrd0+qJcoexvPPQLZyMIf26L2RdW31ZUj8EJndL/Ry/XDhdoMAhq17OV6dzO5vQ==
   dependencies:
     "@babel/cli" "^7.2.3"
     "@babel/core" "^7.2.2"
@@ -5045,6 +5045,11 @@ webpack-babel-multi-target-plugin-fix@2.3.1:
     webpack-sources "^1.3.0"
   optionalDependencies:
     html-webpack-plugin "^3.2.0"
+
+webpack-cdn-plugin@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/webpack-cdn-plugin/-/webpack-cdn-plugin-3.1.4.tgz#8db8aabcf4c2ddb59a656b8198148cc5de2159f8"
+  integrity sha512-J88WEKc0e0rqSNNsLKk7mOVlVMviTCdew70CJVAz6vEzdUDx8FDBnuWmMxkOJrATCF1AgbrRskhTMI2CLOo45g==
 
 webpack-cli@^3.3.9:
   version "3.3.9"

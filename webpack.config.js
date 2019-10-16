@@ -1,8 +1,9 @@
 'use strict';
 
 const path = require('path');
-const { BabelMultiTargetPlugin } = require('webpack-babel-multi-target-plugin-fix');
+const { BabelMultiTargetPlugin } = require('webpack-babel-multi-target-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackCdnPlugin = require('webpack-cdn-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -10,6 +11,9 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   output: {
     path: path.resolve('src')
+  },
+  externals: {
+    'ace-builds/src-noconflict/ace.js': 'ace'
   },
   module: {
     rules: [
@@ -23,6 +27,23 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin(),
+    new WebpackCdnPlugin({
+      modules: [
+        {
+          name: 'ace-builds',
+          path: 'src-noconflict/ace.js'
+        },
+        {
+          name: 'ace-builds',
+          path: 'src-noconflict/ext-searchbox.js'
+        },
+        {
+          name: 'ace-builds',
+          path: 'src-noconflict/ext-beautify.js'
+        }
+      ],
+      publicPath: '/node_modules'
+    }),
     // Babel configuration for multiple output bundles targeting different sets
     // of browsers
     new BabelMultiTargetPlugin({
@@ -32,11 +53,6 @@ module.exports = {
           useBuiltIns: false
         }
       },
-
-      // Exclude dependency from transpilation
-      exclude: [
-        /node_modules\/ace-builds/
-      ],
 
       // Target browsers with and without ES modules support
       targets: {
