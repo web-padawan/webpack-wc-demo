@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const { BabelMultiTargetPlugin } = require('webpack-babel-multi-target-plugin');
+const { BabelMultiTargetPlugin } = require('webpack-babel-multi-target-plugin-fix');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -33,13 +33,8 @@ module.exports = {
         }
       },
 
-      // Exclude dependency from transpiling
+      // Exclude dependency from transpilation
       exclude: [
-        /node_modules\/ace-builds/
-      ],
-
-      // Exclude dependency from targeting
-      doNotTarget: [
         /node_modules\/ace-builds/
       ],
 
